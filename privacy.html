@@ -20,18 +20,27 @@
   a { color: #58a6ff; text-decoration: none; }
   a:hover { text-decoration: underline; }
   code { background: #161b22; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+  nav { margin: 0 0 1.5rem; font-size: .9rem; }
 </style>
 </head>
 <body>
 <main>
+  <nav><a href="./">Hermes</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 18 October 2026</p>
+  <p class="updated">Last updated: 1 November 2026</p>
 
   <p>This policy describes how <strong>Hermes</strong> ("the app") handles Google user data. Hermes is a personal, self-hosted AI assistant used by a single individual — its owner. It is not a commercial product and is not offered to the public.</p>
 
   <h2>What data the app accesses</h2>
   <ul>
-    <li><strong>Gmail (read-only)</strong> — message metadata and content, used to search and summarise the owner's own mail at the owner's request. The app requests the <code>gmail.readonly</code> scope and therefore cannot send, draft, modify, label, or delete email.</li>
+    <li><strong>Gmail</strong> — message metadata, content and attachments, used to search, summarise and organise the owner's own mail at the owner's request. The app requests the <code>gmail.modify</code> and <code>gmail.compose</code> scopes, which allow it to:</li>
+    <ul>
+      <li>read messages and threads;</li>
+      <li>apply or remove labels;</li>
+      <li>move messages to Trash — the app never permanently deletes mail;</li>
+      <li>create draft messages when the owner asks for one.</li>
+    </ul>
+    <li><strong>Gmail sending is never performed by the app.</strong> Although the <code>gmail.compose</code> scope can technically transmit mail, the app contains no code path that sends a message or a draft. Sending is always done by the owner, manually, in Gmail.</li>
     <li><strong>Google Calendar</strong> — calendar events, used to display schedules, detect conflicts, and create or remove events at the owner's explicit request.</li>
   </ul>
 
@@ -48,10 +57,10 @@
   <p>Hermes' use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
   <h2>Data retention and deletion</h2>
-  <p>Data is retained only for as long as it is needed to serve the owner's requests. The owner can delete all stored credentials at any time, which removes the app's access entirely.</p>
+  <p>Data is retained only for as long as it is needed to serve the owner's requests. The owner can delete all stored credentials at any time, which removes the app's access entirely. Deleting the local token file immediately ends all access.</p>
 
   <h2>Revoking access</h2>
-  <p>Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. Revocation immediately ends the app's ability to read Gmail or Calendar data.</p>
+  <p>Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. Revocation immediately ends the app's ability to read, label, trash, or draft Gmail content, and to read or modify Calendar events.</p>
 
   <h2>Contact</h2>
   <p>Questions about this policy: <a href="mailto:mulyaandara250@gmail.com">mulyaandara250@gmail.com</a></p>
